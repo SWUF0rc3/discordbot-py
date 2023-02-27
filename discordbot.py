@@ -8,8 +8,6 @@ import sqlite3
 from dotenv import load_dotenv
 import os
 import itertools
-import pytz
-from pytz import timezone
 
 load_dotenv()
 
@@ -29,8 +27,8 @@ async def on_ready():
 
 @bot.tree.command(name="출석체크")
 async def att(interaction: discord.Interaction):
-    date_rec = datetime.now(timezone('Asia/Seoul')).strftime('%Y-%m-%d')
-    time_rec = datetime.now(timezone('Asia/Seoul')).strftime('%H:%M')
+    date_rec = datetime.today().strftime('%Y-%m-%d')
+    time_rec = datetime.today().strftime('%H:%M')
 
     await interaction.response.send_message(f"{interaction.user.display_name} 출석했습니다.\n{date_rec} {time_rec}")
     #user.name -> 실제 사용자 이름
