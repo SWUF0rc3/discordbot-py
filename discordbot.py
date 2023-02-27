@@ -8,6 +8,7 @@ import sqlite3
 from dotenv import load_dotenv
 import os
 import itertools
+import pytz
 from pytz import timezone
 
 load_dotenv()
